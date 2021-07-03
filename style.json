@@ -774,25 +774,6 @@
       }
     },
     {
-      "id": "highway-area",
-      "type": "fill",
-      "source": "geolonia",
-      "source-layer": "transportation",
-      "filter": [
-        "==",
-        "$type",
-        "Polygon"
-      ],
-      "layout": {
-        "visibility": "visible"
-      },
-      "paint": {
-        "fill-color": "rgba(227, 227, 227, 1)",
-        "fill-outline-color": "#cfcdca",
-        "fill-antialias": false
-      }
-    },
-    {
       "id": "highway-path",
       "type": "line",
       "source": "geolonia",
@@ -820,6 +801,9 @@
           ]
         ]
       ],
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "rgba(255, 255, 255, 1)",
         "line-dasharray": [
@@ -864,7 +848,8 @@
       ],
       "layout": {
         "line-cap": "round",
-        "line-join": "round"
+        "line-join": "round",
+        "visibility": "visible"
       },
       "paint": {
         "line-color": "rgba(255, 255, 255, 1)",
@@ -961,7 +946,8 @@
       ],
       "layout": {
         "line-cap": "round",
-        "line-join": "round"
+        "line-join": "round",
+        "visibility": "visible"
       },
       "paint": {
         "line-color": "rgba(255, 255, 255, 1)",
@@ -1313,53 +1299,6 @@
       }
     },
     {
-      "id": "bridge-trunk-primary-casing",
-      "type": "line",
-      "source": "geolonia",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        [
-          "==",
-          "brunnel",
-          "bridge"
-        ],
-        [
-          "in",
-          "class",
-          "primary",
-          "trunk"
-        ]
-      ],
-      "layout": {
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": "rgba(153, 153, 153, 1)",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              5,
-              0.4
-            ],
-            [
-              6,
-              0.6
-            ],
-            [
-              7,
-              1.5
-            ],
-            [
-              20,
-              26
-            ]
-          ]
-        }
-      }
-    },
-    {
       "id": "bridge-motorway-casing",
       "type": "line",
       "source": "geolonia",
@@ -1407,49 +1346,6 @@
       }
     },
     {
-      "id": "bridge-path-casing",
-      "type": "line",
-      "source": "geolonia",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        [
-          "==",
-          "$type",
-          "LineString"
-        ],
-        [
-          "all",
-          [
-            "==",
-            "brunnel",
-            "bridge"
-          ],
-          [
-            "==",
-            "class",
-            "path"
-          ]
-        ]
-      ],
-      "paint": {
-        "line-color": "#f8f4f0",
-        "line-width": {
-          "base": 1.2,
-          "stops": [
-            [
-              15,
-              1.2
-            ],
-            [
-              20,
-              18
-            ]
-          ]
-        }
-      }
-    },
-    {
       "id": "bridge-path",
       "type": "line",
       "source": "geolonia",
@@ -1476,24 +1372,25 @@
         ]
       ],
       "paint": {
-        "line-color": "#cba",
+        "line-color": "rgba(255, 255, 255, 1)",
         "line-width": {
           "base": 1.2,
           "stops": [
             [
-              15,
-              1.2
+              0,
+              0.5
             ],
             [
-              20,
-              4
+              12,
+              1
             ]
           ]
         },
         "line-dasharray": [
           1.5,
           0.75
-        ]
+        ],
+        "line-opacity": 0.5
       }
     },
     {
@@ -1657,21 +1554,17 @@
         "line-join": "round"
       },
       "paint": {
-        "line-color": "rgba(255, 255, 255, 0.4)",
+        "line-color": "rgba(255, 255, 255, 1)",
         "line-width": {
           "base": 1.2,
           "stops": [
             [
-              6.5,
-              0
+              1,
+              1
             ],
             [
-              7,
-              0.5
-            ],
-            [
-              20,
-              18
+              12,
+              2
             ]
           ]
         }
@@ -1704,16 +1597,12 @@
           "base": 1.2,
           "stops": [
             [
-              6.5,
-              0
+              1,
+              1
             ],
             [
-              7,
-              0.5
-            ],
-            [
-              20,
-              18
+              12,
+              2
             ]
           ]
         }
@@ -2140,55 +2029,6 @@
         "text-color": "#FFFFFF",
         "text-halo-width": 1,
         "text-halo-color": "#000000"
-      }
-    },
-    {
-      "id": "road_oneway",
-      "type": "symbol",
-      "source": "geolonia",
-      "source-layer": "transportation",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        [
-          "==",
-          "oneway",
-          1
-        ],
-        [
-          "in",
-          "class",
-          "motorway",
-          "trunk",
-          "primary",
-          "secondary",
-          "tertiary",
-          "minor",
-          "service"
-        ]
-      ],
-      "layout": {
-        "symbol-placement": "line",
-        "icon-image": "oneway",
-        "symbol-spacing": 75,
-        "icon-padding": 2,
-        "icon-rotation-alignment": "map",
-        "icon-rotate": 90,
-        "icon-size": {
-          "stops": [
-            [
-              15,
-              0.5
-            ],
-            [
-              19,
-              1
-            ]
-          ]
-        }
-      },
-      "paint": {
-        "icon-opacity": 0.5
       }
     },
     {
