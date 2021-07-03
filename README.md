@@ -1,4 +1,4 @@
-# Midnight
+# Scratch
 
 This is a Mapbox GL JS based style for [Geolonia](https://geolonia.com/).
 
