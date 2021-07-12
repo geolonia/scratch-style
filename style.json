@@ -1603,7 +1603,6 @@
       "type": "symbol",
       "source": "geolonia",
       "source-layer": "poi",
-      "minzoom": 16,
       "filter": [
         "all",
         [
